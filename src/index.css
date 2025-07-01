@@ -1,0 +1,1872 @@
+/* KRUSTY BURGER - CSS PRINCIPAL */
+
+/* RESET Y BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* VARIABLES DE COLOR */
+:root {
+  --simpsons-red: #D4173F;
+  --simpsons-yellow: #FED90F;
+  --simpsons-blue: #3E5F8A;
+  --simpsons-blue-dark: #2D4A6D;
+  --simpsons-light-blue: #E6F3FF;
+  --gray-50: #F7FAFC;
+  --gray-100: #F7FAFC;
+  --gray-500: #A0AEC0;
+  --gray-600: #718096;
+  --gray-700: #4A5568;
+  --gray-800: #2D3748;
+}
+
+/* HEADER CSS */
+.krusty-header {
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 4px solid var(--simpsons-yellow);
+  margin: 0;
+  padding: 0;
+}
+
+.krusty-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.krusty-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.krusty-header-logo img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--simpsons-yellow);
+}
+
+.krusty-header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.krusty-header-nav ul {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.krusty-header-nav li {
+  list-style: none;
+}
+
+.krusty-header-nav a {
+  text-transform: uppercase;
+  transition: color 0.3s;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.krusty-header-nav a:hover {
+  color: var(--simpsons-red);
+}
+
+.krusty-header-nav a.active {
+  color: var(--simpsons-blue);
+}
+
+.krusty-header-nav a.inactive {
+  color: rgba(45, 74, 109, 0.8);
+}
+
+.krusty-header-order-btn {
+  background: var(--simpsons-yellow);
+  color: var(--simpsons-blue);
+  font-weight: bold;
+  padding: 0.5rem 1.75rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  box-shadow: 0 2px 8px 0 #ffe01b55;
+  border: 2px solid var(--simpsons-yellow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  text-decoration: none;
+}
+
+.krusty-header-order-btn:hover {
+  background: var(--simpsons-red);
+  color: white;
+}
+
+/* Eliminar subrayado de enlaces que contienen botones */
+.krusty-header a {
+  text-decoration: none;
+}
+
+/* FOOTER CSS */
+.krusty-footer {
+  background: white;
+  border-top: 1px solid var(--gray-100);
+  margin-top: 3rem;
+}
+
+.krusty-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .krusty-footer-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.krusty-footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .krusty-footer-section {
+    align-items: flex-start;
+  }
+}
+
+.krusty-footer-logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .krusty-footer-logo-section {
+    align-items: flex-start;
+  }
+}
+
+.krusty-footer-logo {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--simpsons-yellow);
+  margin-bottom: 0.5rem;
+}
+
+.krusty-footer-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  color: var(--simpsons-red);
+  margin-bottom: 0.5rem;
+}
+
+.krusty-footer-subtitle {
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  color: var(--simpsons-blue);
+  margin-bottom: 1rem;
+}
+
+.krusty-footer-description {
+  color: var(--gray-600);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .krusty-footer-description {
+    text-align: left;
+  }
+}
+
+.krusty-footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.krusty-footer-list li {
+  margin-bottom: 0.5rem;
+}
+
+.krusty-footer-list a {
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.krusty-footer-list a:hover {
+  color: var(--simpsons-blue);
+}
+
+.krusty-footer-text {
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.krusty-footer-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .krusty-footer-social {
+    justify-content: flex-start;
+  }
+}
+
+.krusty-footer-social a {
+  background: var(--gray-100);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.krusty-footer-social a:hover {
+  background: var(--simpsons-yellow);
+}
+
+.krusty-footer-bottom {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-100);
+  text-align: center;
+}
+
+.krusty-footer-copyright {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-bottom: 0.5rem;
+}
+
+.krusty-footer-legal {
+  font-size: 0.75rem;
+  color: #CBD5E0;
+  font-style: italic;
+}
+
+/* HOME CSS */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.home-main {
+  flex: 1;
+}
+
+/* HERO */
+.home-hero-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .home-hero-section {
+    flex-direction: row;
+  }
+}
+
+.home-hero-left {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .home-hero-left {
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+.home-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--simpsons-red);
+  margin-bottom: 1.5rem;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .home-hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+.home-hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--gray-700);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .home-hero-subtitle {
+    font-size: 2rem;
+  }
+}
+
+.home-hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-menu-button {
+  background: var(--simpsons-yellow);
+  color: var(--simpsons-blue);
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  font-size: 1.125rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--simpsons-yellow);
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.home-menu-button:hover {
+  border-color: var(--simpsons-blue);
+}
+
+.home-about-button {
+  background: white;
+  color: var(--simpsons-blue);
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  font-size: 1.125rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--simpsons-blue);
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.home-about-button:hover {
+  background: var(--simpsons-blue);
+  color: white;
+}
+
+.home-hero-right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .home-hero-right {
+    width: 50%;
+  }
+}
+
+.home-hero-right img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ESPECIALIDADES */
+.home-specialties-section {
+  width: 100%;
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, white, rgba(254, 217, 15, 0.2));
+}
+
+.home-specialties-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.home-specialties-title-container {
+  display: inline-block;
+  position: relative;
+}
+
+.home-specialties-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  color: var(--simpsons-red);
+  background: white;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  border: 4px solid black;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .home-specialties-title {
+    font-size: 3rem;
+  }
+}
+
+.home-specialties-title-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.75rem;
+  background: var(--simpsons-blue);
+  border-radius: 9999px;
+  transform: translateY(60%);
+  z-index: -10;
+}
+
+.home-specialties-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .home-specialties-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* CARDS */
+.home-menu-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 8px solid var(--simpsons-blue);
+}
+
+.home-costiburger-card {
+  background: var(--simpsons-yellow);
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 8px solid var(--simpsons-red);
+  position: relative;
+}
+
+.home-new-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--simpsons-red);
+  color: white;
+  font-weight: bold;
+  padding: 0.25rem 1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  font-size: 0.75rem;
+}
+
+.home-card-image {
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  max-height: 12rem;
+}
+
+.home-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--simpsons-blue);
+  margin-bottom: 0.5rem;
+}
+
+.home-costiburger-title {
+  color: var(--simpsons-red);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home-card-description {
+  color: var(--gray-700);
+  margin-bottom: 1.5rem;
+}
+
+.home-card-button {
+  background: var(--simpsons-blue);
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.home-card-button:hover {
+  background: var(--simpsons-red);
+}
+
+.home-costiburger-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.home-costiburger-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-price-label {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  display: block;
+}
+
+.home-price-value {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--simpsons-red);
+}
+
+.home-costiburger-button {
+  background: var(--simpsons-red);
+  text-decoration: none;
+}
+
+.home-costiburger-button:hover {
+  background: var(--simpsons-blue);
+}
+
+.arrow {
+  font-size: 1.25rem;
+}
+
+/* HISTORIA */
+.home-history-section {
+  width: 100%;
+  padding: 4rem 0;
+  background: var(--gray-50);
+}
+
+.home-history-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.home-history-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  color: var(--simpsons-blue);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .home-history-title {
+    font-size: 3rem;
+  }
+}
+
+.home-history-subtitle {
+  font-size: 1.125rem;
+  max-width: 48rem;
+  margin: 0 auto 2rem auto;
+  color: var(--gray-700);
+}
+
+.home-history-button {
+  background: var(--simpsons-red);
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.home-history-button:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.home-history-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .home-history-images {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.home-history-image {
+  border-radius: 0.5rem;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  max-height: 12rem;
+}
+
+/* Eliminar subrayado de enlaces que contienen botones */
+.home-container a {
+  text-decoration: none;
+}
+
+/* MENU CSS */
+.menu-container {
+  min-height: 100vh;
+  background: white;
+}
+
+.menu-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* FILTRO DE CATEGORÍAS */
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  position: sticky;
+  top: 5rem;
+  z-index: 30;
+  background: var(--simpsons-light-blue);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.menu-filter-btn {
+  background: var(--simpsons-yellow);
+  color: var(--simpsons-blue);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  border: 2px solid var(--simpsons-yellow);
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-filter-btn:hover {
+  border-color: var(--simpsons-blue);
+}
+
+.menu-filter-btn-secondary {
+  background: white;
+  color: var(--simpsons-red);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  border: 2px solid var(--simpsons-red);
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-filter-btn-secondary:hover {
+  background: var(--simpsons-yellow);
+  color: var(--simpsons-blue);
+}
+
+/* TÍTULO Y FRASE */
+.menu-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.menu-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  color: var(--simpsons-red);
+  text-shadow: 1px 1px 0 #000;
+  background: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 4px solid black;
+  transform: rotate(-1deg);
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .menu-title {
+    font-size: 3rem;
+  }
+}
+
+.menu-subtitle {
+  margin-top: 1rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-subtitle p {
+  font-size: 1.25rem;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+/* BARRA DE OPCIONES */
+.menu-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.menu-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  border: 1px solid #E2E8F0;
+}
+
+.menu-option img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.menu-option span {
+  font-weight: bold;
+  color: var(--simpsons-blue);
+}
+
+.menu-option-spicy span {
+  color: var(--simpsons-red);
+}
+
+/* SECCIÓN COSTIBURGER */
+.menu-costiburger-section {
+  padding: 0;
+  margin-bottom: 4rem;
+}
+
+.menu-costiburger-container {
+  width: 100%;
+  background: var(--simpsons-yellow);
+  padding: 3rem 0.5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-costiburger-badge {
+  margin-bottom: 1.5rem;
+}
+
+.menu-costiburger-badge span {
+  background: var(--simpsons-red);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.menu-costiburger-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  color: var(--simpsons-blue);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .menu-costiburger-title {
+    font-size: 3rem;
+  }
+}
+
+.menu-costiburger-description {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: var(--simpsons-blue-dark);
+}
+
+@media (min-width: 768px) {
+  .menu-costiburger-description {
+    font-size: 1.5rem;
+  }
+}
+
+.menu-costiburger-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 64rem;
+}
+
+@media (min-width: 768px) {
+  .menu-costiburger-content {
+    flex-direction: row;
+  }
+}
+
+.menu-costiburger-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-costiburger-image img {
+  max-height: 240px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.menu-costiburger-details {
+  flex: 1;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.menu-costiburger-details p {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--simpsons-blue-dark);
+  text-align: center;
+}
+
+.menu-costiburger-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.menu-costiburger-btn {
+  background: var(--simpsons-blue);
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-costiburger-btn-dark {
+  background: var(--simpsons-blue-dark);
+}
+
+/* SECCIONES DE PRODUCTOS */
+.menu-section {
+  padding: 2rem 0;
+  margin-bottom: 0;
+}
+
+.menu-section-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-family: 'Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  color: var(--simpsons-red);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.menu-products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .menu-products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-products-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* TARJETAS DE PRODUCTOS */
+.menu-product-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  border-top: 4px solid var(--simpsons-blue);
+}
+
+.menu-product-card:hover {
+  transform: translateY(-4px);
+}
+
+.menu-product-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.menu-product-content {
+  padding: 1.5rem;
+}
+
+.menu-product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.menu-product-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--simpsons-blue-dark);
+  flex: 1;
+}
+
+.menu-product-icons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.menu-product-icons img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.menu-product-description {
+  color: var(--gray-700);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.menu-product-quote {
+  font-style: italic;
+  color: var(--simpsons-red);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.menu-product-variants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.menu-product-variant {
+  background: var(--simpsons-yellow);
+  color: var(--simpsons-blue);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.menu-product-button {
+  background: var(--simpsons-blue);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.menu-product-button:hover {
+  background: var(--simpsons-red);
+}
+
+/* SECCIÓN FINAL */
+.menu-footer-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
+}
+
+.menu-footer-card {
+  background: var(--simpsons-yellow);
+  border: 4px solid black;
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto;
+  transform: rotate(-2deg);
+}
+
+.menu-footer-text {
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: var(--simpsons-red);
+  margin-bottom: 0.5rem;
+}
+
+.menu-footer-disclaimer {
+  font-size: 0.75rem;
+  color: var(--gray-700);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-filters {
+    top: 4rem;
+  }
+  
+  .menu-costiburger-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .menu-costiburger-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Estilos para la página de ubicaciones */
+.locations-container {
+  padding: 0;
+  background-color: white;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.locations-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.locations-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.locations-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'The Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  color: #D4173F;
+  text-shadow: 1px 1px 0 #000;
+  display: inline-block;
+  background-color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 4px solid #000;
+  transform: rotate(-1deg);
+  box-shadow: 4px 4px 0 #000;
+  margin-bottom: 1rem;
+}
+
+.locations-subtitle {
+  margin-top: 1rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.locations-subtitle p {
+  font-size: 1.25rem;
+  font-family: 'The Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .locations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .locations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.locations-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+  margin-bottom: 0;
+}
+
+.locations-card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  z-index: 2;
+}
+
+.locations-card-header {
+  background-color: #3E5F8A;
+  padding: 0.75rem;
+  border-bottom: 4px solid #000;
+}
+
+.locations-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  color: #FFD23F;
+  font-family: 'The Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  text-shadow: 1px 1px 0 #000;
+  margin: 0;
+}
+
+.locations-card-content {
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.locations-image-container {
+  position: relative;
+  height: 10rem;
+  margin-bottom: 1rem;
+  background-color: #E8F4FD;
+  border-radius: 0.5rem;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.locations-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  display: block;
+}
+
+.locations-info {
+  text-align: center;
+  font-family: 'The Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.locations-address {
+  margin-bottom: 0.25rem;
+}
+
+.locations-phone {
+  margin-bottom: 1rem;
+}
+
+.locations-button {
+  background-color: #D4173F;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid #000;
+  font-family: 'The Simpsons', 'Arial Rounded MT Bold', Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  font-size: 1rem;
+}
+
+.locations-button:hover {
+  background-color: #B31414;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsive design para ubicaciones */
+@media (min-width: 768px) {
+  .locations-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .locations-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Estilos para la página Nosotros */
+.nosotros-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f7fafd;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.nosotros-main {
+  flex: 1;
+  width: 100%;
+}
+
+.nosotros-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem 2rem 1rem;
+}
+
+.nosotros-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.nosotros-title {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #D4173F;
+  background-color: white;
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.5rem;
+  border: 4px solid black;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  text-shadow: 2px 2px 0 #fffbe6;
+}
+
+.nosotros-subtitle {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+}
+
+@media (min-width: 768px) {
+  .nosotros-title {
+    font-size: 3.75rem;
+  }
+  
+  .nosotros-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.nosotros-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .nosotros-history {
+    flex-direction: row;
+  }
+}
+
+.nosotros-history-content {
+  flex: 1;
+}
+
+.nosotros-history-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #3E5F8A;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .nosotros-history-title {
+    font-size: 1.875rem;
+  }
+}
+
+.nosotros-history-text {
+  color: #222;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.nosotros-warning {
+  background-color: #FED90F;
+  color: #222;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.nosotros-history-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nosotros-history-image img {
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 28rem;
+  object-fit: cover;
+}
+
+.nosotros-burger2 {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.nosotros-burger2-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #3E5F8A;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .nosotros-burger2-title {
+    font-size: 2.25rem;
+  }
+}
+
+.nosotros-burger2-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .nosotros-burger2-content {
+    flex-direction: row;
+  }
+}
+
+.nosotros-burger2-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nosotros-burger2-image {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  object-fit: cover;
+}
+
+.nosotros-burger2-subtitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #D4173F;
+  margin-top: 0.5rem;
+}
+
+.nosotros-burger2-text {
+  color: #222;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nosotros-burger2-quote {
+  border: 2px solid #D4173F;
+  background-color: white;
+  color: #222;
+  font-style: italic;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.nosotros-burger2-quote-blue {
+  border: 2px solid #3E5F8A;
+  background-color: white;
+  color: #222;
+  font-style: italic;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.nosotros-burger2-result {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #D4173F;
+  margin-top: 1rem;
+}
+
+.nosotros-burger2-final-image {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.nosotros-burger2-caption {
+  text-align: center;
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.nosotros-experience {
+  margin-bottom: 3rem;
+}
+
+.nosotros-experience-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #3E5F8A;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .nosotros-experience-title {
+    font-size: 2.25rem;
+  }
+}
+
+.nosotros-experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .nosotros-experience-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.nosotros-experience-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nosotros-experience-image {
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  width: 100%;
+  height: 12rem;
+}
+
+.nosotros-experience-subtitle {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #D4173F;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.nosotros-experience-text {
+  color: #222;
+  text-align: center;
+  font-weight: 600;
+}
+
+.nosotros-facts {
+  margin-bottom: 3rem;
+}
+
+.nosotros-facts-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #3E5F8A;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .nosotros-facts-title {
+    font-size: 2.25rem;
+  }
+}
+
+.nosotros-facts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .nosotros-facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.nosotros-facts-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nosotros-facts-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.nosotros-facts-number {
+  background-color: #3E5F8A;
+  color: white;
+  border-radius: 9999px;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.nosotros-facts-number-red {
+  background-color: #D4173F;
+  color: white;
+  border-radius: 9999px;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.nosotros-facts-subtitle {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #3E5F8A;
+}
+
+.nosotros-facts-text {
+  color: #222;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.nosotros-facts-image {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  width: 100%;
+  height: 9rem;
+}
+
+.nosotros-banner {
+  width: 100%;
+  background-color: #3E5F8A;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border: 4px solid black;
+  margin-bottom: 2rem;
+  transform: rotate(-2deg);
+}
+
+/* Estilos para la página de Pedido */
+.pedido-container {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f7fafd;
+}
+
+.pedido-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.pedido-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #D4173F;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.pedido-empty {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.125rem;
+  padding: 2rem;
+}
+
+.pedido-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pedido-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 2px solid #FED90F;
+}
+
+.pedido-item-info {
+  flex: 1;
+}
+
+.pedido-item-name {
+  font-weight: 600;
+  color: #3E5F8A;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.pedido-item-price {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.pedido-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pedido-remove-btn {
+  color: #ef4444;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.pedido-remove-btn:hover {
+  color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.pedido-summary {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 3px solid #3E5F8A;
+}
+
+.pedido-clear-btn {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pedido-clear-btn:hover {
+  background-color: #dc2626;
+}
+
+.pedido-total-section {
+  text-align: right;
+}
+
+.pedido-total {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #3E5F8A;
+  margin-bottom: 0.5rem;
+}
+
+.pedido-checkout-btn {
+  background-color: #FED90F;
+  color: #D4173F;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.375rem;
+  border: 2px solid #FED90F;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.pedido-checkout-btn:hover {
+  background-color: #D4173F;
+  color: white;
+  border-color: #D4173F;
+}
+
+/* Responsive design para pedido */
+@media (max-width: 768px) {
+  .pedido-summary {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .pedido-total-section {
+    text-align: center;
+  }
+  
+  .pedido-item {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .pedido-item-actions {
+    justify-content: center;
+  }
+}
