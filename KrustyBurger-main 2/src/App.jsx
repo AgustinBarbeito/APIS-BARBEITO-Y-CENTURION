@@ -5,6 +5,10 @@ import Menu from './pages/Menu';
 import Pedido from './pages/Pedido';
 import Nosotros from './pages/Nosotros';
 import Ubicaciones from './pages/Ubicaciones';
+import Login from './pages/Login';
+import Admin from './pages/Admin';
+import AdminPlatos from './pages/AdminPlatos';
+import AdminUsuarios from './pages/AdminUsuarios';
 
 export default function App() {
   return (
@@ -14,6 +18,10 @@ export default function App() {
       <Route path="/pedido" element={<Pedido />} />
       <Route path="/nosotros" element={<Nosotros />} />
       <Route path="/ubicaciones" element={<Ubicaciones />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/admin" element={<Admin />} />
+      <Route path="/admin/platos" element={<AdminPlatos />} />
+      <Route path="/admin/usuarios" element={<AdminUsuarios />} />
     </Routes>
   );
 } 

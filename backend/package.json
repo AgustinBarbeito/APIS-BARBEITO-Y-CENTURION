@@ -1,0 +1,18 @@
+{
+  "name": "krustyburger-backend",
+  "version": "1.0.0",
+  "description": "Backend para KrustyBurger con Express y MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.16.1"
+  }
+}
