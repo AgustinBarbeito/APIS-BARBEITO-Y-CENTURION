@@ -5,14 +5,16 @@ import KrustyFooter from '../components/krusty-footer';
 import QuantitySelector from '../components/quantity-selector';
 
 export default function Pedido() {
-  const { cart, removeFromCart, updateQuantity, clearCart, getTotal } = useCart();
+  const { cart, removeFromCart, updateQuantity, clearCart, getTotal, isLoaded } = useCart();
 
   return (
     <div className="pedido-container">
       <KrustyHeader />
       <div className="pedido-content">
         <h1 className="pedido-title">Mi Pedido</h1>
-        {cart.length === 0 ? (
+        {!isLoaded ? (
+          <p className="pedido-empty">Cargando carrito...</p>
+        ) : cart.length === 0 ? (
           <p className="pedido-empty">Tu carrito está vacío</p>
         ) : (
           <>

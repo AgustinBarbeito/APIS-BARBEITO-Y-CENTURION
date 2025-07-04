@@ -2,9 +2,11 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useCart } from '../context/cart-context';
 
 
 export default function KrustyHeader() {
+  const { cart, isLoaded } = useCart();
   const location = useLocation();
   const navItems = [
     { label: 'INICIO', to: '/' },
@@ -36,6 +38,9 @@ export default function KrustyHeader() {
         <Link to="/pedido">
           <button className="krusty-header-order-btn">
             <span role="img" aria-label="bag">🛒</span> ORDENAR
+            {isLoaded && cart.length > 0 && (
+              <span className="cart-badge">{cart.length}</span>
+            )}
           </button>
         </Link>
       </div>

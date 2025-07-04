@@ -6,17 +6,36 @@ const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
+  const [notification, setNotification] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  // Inicialización del carrito desde localStorage
   useEffect(() => {
-    const savedCart = localStorage.getItem('cart');
-    if (savedCart) {
-      setCart(JSON.parse(savedCart));
+    try {
+      const savedCart = localStorage.getItem('cart');
+      if (savedCart) {
+        const parsedCart = JSON.parse(savedCart);
+        console.log('Carrito cargado desde localStorage:', parsedCart);
+        setCart(parsedCart);
+      }
+    } catch (error) {
+      console.error('Error loading cart from localStorage:', error);
+    } finally {
+      setIsLoaded(true);
     }
   }, []);
 
+  // Persistencia del carrito en localStorage
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
+    if (isLoaded) {
+      try {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log('Carrito guardado en localStorage:', cart);
+      } catch (error) {
+        console.error('Error saving cart to localStorage:', error);
+      }
+    }
+  }, [cart, isLoaded]);
 
   const addToCart = (item) => {
     setCart(prevCart => {
@@ -33,6 +52,12 @@ export function CartProvider({ children }) {
       }
       return [...prevCart, { ...item, quantity: 1 }];
     });
+    
+    // Notificación de producto agregado
+    setNotification(`${item.name} agregado al carrito`);
+    setTimeout(() => setNotification(null), 3000);
+    
+    console.log('Producto agregado al carrito:', item.name);
   };
 
   const removeFromCart = (itemId, type) => {
@@ -55,7 +80,11 @@ export function CartProvider({ children }) {
 
   const clearCart = () => {
     setCart([]);
-    localStorage.removeItem('cart');
+    try {
+      localStorage.removeItem('cart');
+    } catch (error) {
+      console.error('Error clearing cart from localStorage:', error);
+    }
   };
 
   const getTotal = () => {
@@ -65,6 +94,13 @@ export function CartProvider({ children }) {
     }, 0);
   };
 
+  const debugCart = () => {
+    console.log('=== DEBUG CARRITO ===');
+    console.log('Estado del carrito:', cart);
+    console.log('Carrito en localStorage:', localStorage.getItem('cart'));
+    console.log('Estado de carga:', isLoaded);
+  };
+
   return (
     <CartContext.Provider value={{
       cart,
@@ -72,9 +108,17 @@ export function CartProvider({ children }) {
       removeFromCart,
       updateQuantity,
       clearCart,
-      getTotal
+      getTotal,
+      notification,
+      isLoaded,
+      debugCart
     }}>
       {children}
+      {notification && (
+        <div className="cart-notification">
+          {notification}
+        </div>
+      )}
     </CartContext.Provider>
   );
 }
