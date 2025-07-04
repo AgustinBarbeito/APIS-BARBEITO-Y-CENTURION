@@ -10,5 +10,6 @@ router.get('/:id', ProductController.getProductsById);
 router.post('/', requireAuth, ProductController.createProduct);
 router.put('/:id', requireAuth, ProductController.updateProduct);
 router.delete('/:id', requireAuth, ProductController.deleteProduct);
+router.patch('/:id/restore', requireAuth, ProductController.restoreProduct);
 
 module.exports = router;

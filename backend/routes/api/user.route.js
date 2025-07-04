@@ -8,7 +8,7 @@ var { requireAuth } = require('../../middlewares/auth');
 router.get('/', requireAuth, UserController.getUsers);
 
 // POST para crear usuarios (ruta principal)
-router.post('/', UserController.createUser);
+router.post('/', requireAuth, UserController.createUser);
 router.post('/registration', UserController.createUser);
 router.post('/login', UserController.loginUser);
 router.get('/users', requireAuth, UserController.getUsers);

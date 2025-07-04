@@ -52,7 +52,7 @@ mongoose.connect(mongoUrl, {
 });
 
 // Setup server port
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log('Servidor de ABM Users iniciado en el puerto', port);
 }); 
